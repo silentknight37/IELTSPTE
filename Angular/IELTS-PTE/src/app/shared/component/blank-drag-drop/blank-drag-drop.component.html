@@ -1,0 +1,1 @@
+<span  class='container answerBlank' [dragula]="MANY_ITEMS" [(dragulaModel)]='many' id="{{requestAnswer.id}}"> <span class="answer"  *ngFor='let text of many' [innerHtml]="text| safe: 'html'"></span> </span>

@@ -1,0 +1,4 @@
+<select class="custom-select dropdownPadding" (change)="onDropDownChange($event.target.value)" id="drag-drop-{{requestAnswer.id}}" style="width: auto !important;">
+        <option selected></option>
+        <option  *ngFor='let answer of requestAnswer.otherAnswer'  value="{{answer}}">{{answer}}</option>
+</select>

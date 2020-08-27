@@ -1,0 +1,99 @@
+<app-header></app-header>
+<section>
+    <div class="container">
+      <header class="section-header">
+        <h2 class="mb-2">Register</h2>
+      </header>
+      <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <form #userForm="ngForm" (ngSubmit)="saveUser()"  class="contact-form text-left col-lg-12">
+
+                    <div class="form-group mb-4 " 
+                    [class.has-error]="firstNameControl.invalid && firstNameControl.touched"
+                    [class.has-success]="firstNameControl.valid">                    
+                        <label for="firstName" class="control-label">First Name<sup class="text-primary">&#10033;</sup></label>
+                        <input required type="text" [(ngModel)]="newUser.firstName" id="firstName" name="firstName" 
+                        placeholder="FirstName" class="form-control" #firstNameControl="ngModel">
+                        <span class="help-block" *ngIf="firstNameControl.invalid && firstNameControl.touched">
+                            First Name is Required.
+                        </span>
+                    </div>                    
+
+ 
+                    <div class="form-group mb-4" [class.has-error]="lastNmaeControl.invalid && lastNmaeControl.touched"
+                    [class.has-success]="lastNmaeControl.valid">
+                        <label for="lastName" class="control-label">Last Name<sup class="text-primary">&#10033;</sup></label>
+                        <input required type="text" #lastNmaeControl="ngModel" [(ngModel)]="newUser.lastName" id="lastName" name="lastName"  placeholder="LastName" class="form-control">
+                        <span class="help-block" *ngIf="lastNmaeControl.invalid && lastNmaeControl.touched">
+                                Last Name is Required.
+                        </span>
+                    </div>
+                  
+
+                    <div class="form-group mb-4" [class.has-error]="mobileNumberControl.invalid && mobileNumberControl.touched"
+                    [class.has-success]="mobileNumberControl.valid">
+                        <label for="mobile" class="control-label">Mobile</label>
+                        <input required #mobileNumberControl="ngModel" type="text" [(ngModel)]="newUser.mobile" id="mobile" name="mobile"  placeholder="Mobile" class="form-control">
+                        <span class="help-block" *ngIf="mobileNumberControl.invalid && mobileNumberControl.touched">
+                               Mobile Number is Required.
+                        </span>
+                    </div>
+                    <div class="form-group mb-4" [class.has-error]="emailControl.invalid && emailControl.touched"
+                    [class.has-success]="emailControl.valid">
+                        <label class="control-label" for="email">Email<sup class="text-primary">&#10033;</sup></label>
+                        <input required email #emailControl="ngModel" type="email"  [(ngModel)]="newUser.email" id="email" name="email"  placeholder="Email" class="form-control">
+                        <span class="help-block" *ngIf="emailControl.errors?.required && emailControl.touched">
+                                Email is Required.
+                         </span>
+                         <span class="help-block" *ngIf="emailControl.errors?.email && emailControl.touched">
+                                Email is Invalid.
+                         </span>
+                    </div>
+                    <div ngModelGroup="passwordGroup" [class.has-error]="confirmPasswordControl.invalid && confirmPasswordControl.touched && !confirmPasswordControl.errors?.required" [class.has-success]="confirmPasswordControl.valid">
+                   
+                    <div class="form-group mb-4" [class.has-error]="passwordControl.invalid && passwordControl.touched" [class.has-success]="passwordControl.valid">
+                        <label class="control-label" for="password">Password<sup class="text-primary">&#10033;</sup></label>
+                        <input required #passwordControl="ngModel" type="password" [(ngModel)]="newUser.password" id="password" name="password"  placeholder="Password" class="form-control" (input)="confirmPasswordControl.control.updateValueAndValidity()">
+                        <span class="help-block" *ngIf="passwordControl.invalid && passwordControl.touched">
+                                Password is Required.
+                         </span>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label class="control-label" for="confirmPassword">Confirm Password<sup class="text-primary">&#10033;</sup></label>
+                        <input required #confirmPasswordControl="ngModel"  appConfirmEqualValidator="password"  type="password" [(ngModel)]="newUser.confirmpassword" id="confirmPassword" name="ConfirmPassword"  placeholder="Confirm Password" class="form-control">
+                        <span class="help-block"
+                        *ngIf="confirmPasswordControl.touched && confirmPasswordControl.errors?.required">
+                    Confirm Password is required
+                  </span>
+                         <span class="help-block"
+                         *ngIf="confirmPasswordControl.touched && confirmPasswordControl.errors?.notEqual &&
+                           !confirmPasswordControl.errors?.required">
+                     Password and Confirm Password does not match
+                   </span>
+                    </div>
+
+                    </div>
+                    <div class="form-check form-group" [class.has-error]="termsAndConditionControl.invalid && termsAndConditionControl.touched"
+                    [class.has-success]="termsAndConditionControl.valid">
+                        <input required #termsAndConditionControl="ngModel" id="IsConfirmTerms" [(ngModel)]="newUser.isConfirmTerms" name="isConfirmTerms" id="istermasCondition"  type="checkbox" class="form-check-input">
+                        <label class="control-label" for="IsConfirmTerms" class="form-check-label">Confirm terms and conditions</label>&nbsp;<a href="#">Terms and Conditions</a>
+                        <span class="help-block" *ngIf="termsAndConditionControl.invalid && termsAndConditionControl.touched">
+                               Terms & conditions is Required.
+                         </span>
+                    </div>
+                    <div class="form-group pull-right">
+                    <input type="submit" [disabled]="userForm.invalid" value="Save"  class="btn btn-primary">
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        
+      </div>
+    
+    </div>
+  </section>
+ 
+  <app-footer></app-footer>

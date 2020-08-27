@@ -1,0 +1,118 @@
+﻿{
+   "ContextClassName": "IELTS_PTEContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "DoNotCombineNamespace": false,
+   "IdReplace": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": null,
+   "ProjectRootNamespace": "IELTS_PTE.DataAccess",
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[ApplicationUser]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Listening_FillInBlanks]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Listening_HighlightCorrectSummary]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Listening_HighlightIncorrectWords]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Listening_ListeningMultipleChoice]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Listening_ListeningSingleChoice]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Listening_SelectMissingWord]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Listening_SummariesSpokenText]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Listening_WriteFromDictation]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Reading_FillingTheBlank]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Reading_ReadingMultipleChoice]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Reading_ReadingSingleChoice]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Reading_ReadingWritingFillInTheBlank]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Reading_ReOrderParagraph]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[ReadingQuestions]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Speaking_AnswerShort]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Speaking_DescribeImage]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Speaking_ReadAloud]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Speaking_RepeatSentence]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Speaking_RepeatSentence_Review]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Speaking_ReTellLecture]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[SystemConfig]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Writing_Essay]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Writing_Summarise_Written_Text]"
+      }
+   ],
+   "UseDatabaseNames": false,
+   "UseFluentApiOnly": false,
+   "UseHandleBars": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseSpatial": false
+}

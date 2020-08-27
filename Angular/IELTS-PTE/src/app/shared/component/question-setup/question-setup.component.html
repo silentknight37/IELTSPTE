@@ -1,0 +1,54 @@
+
+        <div class="row">
+          <div class="form-group mb-4 col-lg-12">
+            <h3>Question Setup</h3>
+        </div>
+        <form [formGroup]="questionForm" class="contact-form text-left col-lg-12">
+            <div class="form-group mb-4">
+            <label>Subject<sup class="text-primary">&#10033;</sup></label>
+            <input type="text" formControlName="subject" required name="subject" placeholder="Subject" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.subject.errors }" >
+                                  
+            <div *ngIf="submitted && f.subject.errors" class="invalid-feedback">
+                <div *ngIf="f.subject.errors.required">Subject is required</div>
+            </div>
+              
+            </div>
+            <div class="form-group mb-4">
+                <label>Question<sup class="text-primary">&#10033;</sup></label>
+                <textarea name="question" formControlName="question" [placeholder]="requestedURLs.placeHolder" required class="form-control" [ngClass]="{ 'is-invalid': submitted && f.question.errors }" ></textarea>
+                <div *ngIf="submitted && f.question.errors" class="invalid-feedback">
+                    <div *ngIf="f.question.errors.required">Question is required</div>
+                </div>
+            </div>
+            <div class="form-group mb-4">
+            <label>Time (seconds)<sup class="text-primary">&#10033;</sup></label>
+            <input type="number" formControlName="timer" name="timer" placeholder="Time" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.timer.errors }">
+            <div *ngIf="submitted && f.timer.errors" class="invalid-feedback">
+                <div *ngIf="f.timer.errors.required">Time (seconds) is required</div>
+            </div>
+          </div>
+          <div class="form-group mb-4" *ngIf="requestedURLs.isSummarySetup">
+            <label>Question Summary<sup class="text-primary">&#10033;</sup></label>
+            <textarea name="questionSummary" formControlName="questionSummary" placeholder="Question Summary" class="form-control" ></textarea>
+            
+        </div>
+            <div class="form-check form-group">
+                <input id="IsFree" formControlName="isFree" type="checkbox" class="form-check-input">
+                <label for="IsFree" class="form-check-label">Is Free</label>
+               
+            </div>
+            <div class="form-check form-group">
+                <input id="Status" formControlName="status" type="checkbox" class="form-check-input">
+                <label for="Status" class="form-check-label">Active</label>
+               
+            </div>
+            <div class="form-inline pull-right">
+                <input type="button" value="Test" *ngIf='requestedURLs.istts' (click)="triggerQuestion()" class="btn btn-primary rightMargin">
+              <input type="button" value="Save" (click)="saveQuestion()" class="btn btn-primary rightMargin">
+              <input type="button" value="Back" (click)="back()" class="btn btn-primary" >
+            </div>
+            <p [class]='responseClass'>{{responseMessage}}</p>
+        </form>
+        
+        </div>
+   

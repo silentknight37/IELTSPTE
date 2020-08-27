@@ -1,0 +1,103 @@
+
+    <div class="container">
+      <header class="section-header">
+        <h2 class="mb-2">Fill In The Blanks</h2>
+      </header>
+      <div class="row">
+        <div class="col-lg-7 ">
+            <div class="row">
+                <div class="form-group mb-4 col-lg-12">
+                    <h3>Question Setup</h3>
+                </div>
+                <form [formGroup]="questionForm" class="contact-form text-left col-lg-12">
+                    <div class="form-group mb-4">
+                    <label>Subject<sup class="text-primary">&#10033;</sup></label>
+                    <input type="text" formControlName="subject" required name="subject" placeholder="Subject" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.subject.errors }" >
+                                          
+                    <div *ngIf="submitted && f.subject.errors" class="invalid-feedback">
+                        <div *ngIf="f.subject.errors.required">Subject is required</div>
+                    </div>
+                      
+                    </div>
+                    <div class="form-group mb-4">
+                        <label>Question<sup class="text-primary">&#10033;</sup></label>
+                        <textarea name="question" formControlName="question" placeholder="question text [answer] question text [answer]" required class="form-control" [ngClass]="{ 'is-invalid': submitted && f.question.errors }" ></textarea>
+                        <div *ngIf="submitted && f.question.errors" class="invalid-feedback">
+                            <div *ngIf="f.question.errors.required">Question is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group mb-4">
+                    <label>Time (seconds)<sup class="text-primary">&#10033;</sup></label>
+                    <input type="number" formControlName="timer" name="timer" placeholder="Time" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.timer.errors }">
+                    <div *ngIf="submitted && f.timer.errors" class="invalid-feedback">
+                        <div *ngIf="f.timer.errors.required">Time (seconds) is required</div>
+                    </div>
+                  </div>
+                    <div class="form-check form-group">
+                        <input id="IsFree" formControlName="isFree" type="checkbox" class="form-check-input">
+                        <label for="IsFree" class="form-check-label">Is Free</label>
+                       
+                    </div>
+                    <div class="form-check form-group">
+                        <input id="Status" formControlName="status" type="checkbox" class="form-check-input">
+                        <label for="Status" class="form-check-label">Active</label>
+                       
+                    </div>
+                </form>
+                <p [class]='responseClass'>{{responseMessage}}</p>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="row">
+                <div class="form-group mb-4 col-lg-12">
+                    <h3>Alternative Answers Setup</h3>
+                </div>
+                <form [formGroup]="answerForm" class="contact-form text-left col-lg-12">
+                    <div class="form-group mb-4">
+                        <label>Answer<sup class="text-primary">&#10033;</sup></label>
+                        <input type="text" name="answerName" placeholder="Answer" class="form-control" formControlName="answerName" required [ngClass]="{ 'is-invalid': submitted && answersList.length<=0 }">
+                        <div *ngIf="submitted && answersList.length<=0" class="invalid-feedback">
+                            <div>Add More Optional Answers</div>
+                        </div>
+                    </div>
+                    <div class="form-group  pull-right">
+                        
+                        <input type="button" value="Add to List" (click)="addAnswers()" class="btn btn-primary">
+                    </div>
+                </form>
+                <div class="form-group mb-4 col-lg-12">
+                        <table class="table table-hover">
+                                <thead>
+                                  <tr>
+                                    <th>#</th>
+                                    <th>Answer</th>
+                                    <th></th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor='let answer of answersList;let i=index'>
+                                    <td>{{i+1}}</td>
+                                    <td>{{answer}}</td>
+                                    <td><a class="answerLinks" (click)="removeAnswer(answer)"><i class="fa fa-remove"></i></a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                </div>
+            </div>
+        </div> 
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+            <div class="col-lg-2 pull-right">
+                <input type="button" value="Back" (click)="back()" class="btn btn-primary" *ngIf="questionDetails==null">
+              
+            </div>
+            <div class="col-lg-2 pull-right">
+                
+              <input type="button" value="Save" (click)="saveQuestion()" class="btn btn-primary">
+            </div>
+        </div>
+      </div>
+    </div>
+ 

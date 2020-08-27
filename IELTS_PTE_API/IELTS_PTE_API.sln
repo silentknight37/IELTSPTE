@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IELTS_PTE_API", "IELTS_PTE_API\IELTS_PTE_API.csproj", "{D5370ABA-8D0C-4335-B605-745FB41E7A88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IELTS_PTE.Business", "IELTS_PTE.Business\IELTS_PTE.Business.csproj", "{2B8C3CFF-05C3-4DCD-8C2C-668A707D0A91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IELTS_PTE.Common", "IELTS_PTE.Common\IELTS_PTE.Common.csproj", "{BAF12B9A-CD2B-4110-813E-F517BB5989C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IELTS_PTE.DataAccess", "IELTS_PTE.DataAccess\IELTS_PTE.DataAccess.csproj", "{CF3A3C8C-3A2B-4B8A-B2D1-51B1F6264481}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5370ABA-8D0C-4335-B605-745FB41E7A88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5370ABA-8D0C-4335-B605-745FB41E7A88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5370ABA-8D0C-4335-B605-745FB41E7A88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5370ABA-8D0C-4335-B605-745FB41E7A88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B8C3CFF-05C3-4DCD-8C2C-668A707D0A91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B8C3CFF-05C3-4DCD-8C2C-668A707D0A91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B8C3CFF-05C3-4DCD-8C2C-668A707D0A91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B8C3CFF-05C3-4DCD-8C2C-668A707D0A91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAF12B9A-CD2B-4110-813E-F517BB5989C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAF12B9A-CD2B-4110-813E-F517BB5989C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAF12B9A-CD2B-4110-813E-F517BB5989C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAF12B9A-CD2B-4110-813E-F517BB5989C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF3A3C8C-3A2B-4B8A-B2D1-51B1F6264481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF3A3C8C-3A2B-4B8A-B2D1-51B1F6264481}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF3A3C8C-3A2B-4B8A-B2D1-51B1F6264481}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF3A3C8C-3A2B-4B8A-B2D1-51B1F6264481}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B8A9E4B-1B24-4E6B-A242-E9EA8F191C8B}
+	EndGlobalSection
+EndGlobal

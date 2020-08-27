@@ -1,0 +1,103 @@
+<app-header></app-header>
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+<section *ngIf="openSection">
+    <div class="container">
+      <header class="section-header">
+          <h2>Sample Question - Summaries Spoken Text</h2>
+      </header>
+        <div class="col-lg-12 ">
+            <div class="row">
+               
+               <p>Please click Start when you are ready to begin the activity.</p>
+               <form action="#" class="contact-form text-left col-lg-12">
+                   
+                  <div class="form-group pull-right">
+                  <input type="button" (click)='openSectionSection()' value="Start" class="btn btn-primary">
+                  </div>
+              </form>
+              
+            </div>
+        </div>
+    </div>
+  </section>
+<section *ngIf="!openSection">
+    <div class="container">
+      <header class="section-header">
+        <h2 class="mb-2">Summaries Spoken Text - {{questionTitle}}</h2>
+      </header>
+      <div class="row">
+        <div class="col-lg-7 ">
+            
+            <div class="row">
+                
+                <form [formGroup]="answerForm" class="contact-form text-left col-lg-12">
+                    <div class="form-group">
+                        <input type="button" [disabled]="!enableCheckAnswer" (click)='listenAgain()' value="Listen Again" class="btn btn-primary rightMargin">
+                        
+                        </div>
+                        <div class="form-group mb-4 minHeight100">
+                          <textarea formControlName="summariesText"  name="summariesText" placeholder="Please enter your summaries text" rows="4" cols="50" style="width: 100%;"></textarea>
+  
+                          
+                        </div>
+                        <div class="form-group mb-4" *ngIf="!enableCheckAnswer && question.questionSummary!=''">
+                          <p>{{question.questionSummary}}</p>
+                        </div>
+                        <div class="form-group mb-4">
+                          <p>{{response!= null?response.message:""}}</p>
+                        </div>
+                    <div class="form-group pull-right">
+                    <input type="button" *ngIf="question.questionSummary!=''" (click)='checkAnswers()' value="Check Answers" class="btn btn-primary rightMargin">
+                    <input type="button" (click)='sendReview()' value="Send for Review" class="btn btn-primary rightMargin">
+                    </div>
+                    
+                    
+                  
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="row">
+                <div style="margin: auto;padding-bottom:20px; ">
+                    <circle-progress
+                    [percent]="getPresentage(count)"
+                    [radius]="40"
+                    [outerStrokeWidth]="4"
+                    [innerStrokeWidth]="2"
+                    [outerStrokeColor]="'#0069d9'"
+                    [innerStrokeColor]="'#dee2e6'"
+                    [animation]="true"
+                    [animationDuration]="1"
+                    [title]="count"
+                  >{{counter$ | async}}</circle-progress>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group mb-4 col-lg-12">
+                        <table class="table table-hover">
+                                <thead>
+                                  <tr>
+                                    <th>Questions</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor='let question of questions.questionList'> 
+                                    <td (click)='getQestion(question)'>{{question.questionName}}</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                </div>
+            </div>
+        </div> 
+      </div>
+    </div>
+  </section>
+  
+  <app-footer></app-footer>
